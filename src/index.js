@@ -68,6 +68,44 @@ const makeRequest = (http, optionsParam, data) => new Promise((accept, reject) =
   req.end(data);
 });
 
+couchdb.prototype.create_db = function() {
+  const path = `/${this.collection}`;
+
+  const options = Object.assign(
+    {},
+    this.options,
+    {
+      method: 'PUT',
+      path,
+    }
+  );
+
+  if (this.auth) {
+    options.headers = { Authorization: `Basic ${this.auth}` };
+  }
+
+  return makeRequest(this.http, options);
+};
+
+couchdb.prototype.delete_db = function() {
+  const path = `/${this.collection}`;
+
+  const options = Object.assign(
+    {},
+    this.options,
+    {
+      method: 'DELETE',
+      path,
+    }
+  );
+
+  if (this.auth) {
+    options.headers = { Authorization: `Basic ${this.auth}` };
+  }
+
+  return makeRequest(this.http, options);
+};
+
 couchdb.prototype.get = function(id) {
   const path = `/${this.collection}/${id}`;
 
