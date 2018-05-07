@@ -1,0 +1,15 @@
+group: stable
+os: linux
+sudo: false
+
+language: node_js
+node_js:
+  - 10
+
+script:
+  - yarn test
+
+cache:
+  yarn: true
+  directories:
+    - node_modules

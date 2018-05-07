@@ -1,8 +1,8 @@
-# CouchDB interface
+[![Build Status](https://travis-ci.org/lsmoura/couchdb.svg?branch=master)](https://travis-ci.org/lsmoura/couchdb)
 
 Zero-dependency couchdb nodejs interface
 
-## Setup
+# Setup
 
 ```
 const couchdb = require('couchdb');
@@ -17,7 +17,7 @@ const db = couchdb({
 });
 ```
 
-## Talking to the server
+# Talking to the server
 
 After the server is setup with the instructions above, issue the commands on the sections below.
 Every call returns a promise that resolves when the request is successful or rejects otherwise.
@@ -32,15 +32,15 @@ The accept response is with the following format:
 }
 ```
 
-### Getting records
+## Getting records
 
 ```
 db.get('test'); // will retrieve http://localhost:5984/test/test
 ```
 
-### Creating or updating records
+## Creating or updating records
 
-#### Create a new record
+### Create a new record
 
 ```
 db.put('test', { foo: 'bar' });
@@ -51,7 +51,7 @@ db.put({ _id: 'test', foo: 'bar' });
 ```
 
 
-#### Updating an existing record
+### Updating an existing record
 
 ```
 db.put('test', 'revision-id', { foo: 'bar' });
@@ -61,6 +61,6 @@ db.put('test', 'revision-id', { foo: 'bar' });
 db.put({ _id: 'test', _rev: 'revision-id',  foo: 'bar' });
 ```
 
-## Author
+# Author
 
 * [Sergio Moura](https://sergio.moura.ca)
