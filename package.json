@@ -3,7 +3,7 @@
   "description": "Zero configuration nodejs integration with CouchDB",
   "repository": "https://github.com/lsmoura/couchdb.git",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "license": "MIT",
   "author": "Sergio Moura <sergio@moura.ca>",
   "scripts": {
